@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionador de Frutas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            width: 350px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            color: #ff5722;
+            margin-bottom: 20px;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #resultado {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 25px;
+            color: #388e3c;
+        }
+        #probabilidad {
+            font-size: 18px;
+            color: #757575;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Seleccionador de Frutas</h1>
+        <button onclick="obtenerFruta()">Obtener Fruta Aleatoria</button>
+        <h2 id="resultado"></h2>
+        <h3 id="probabilidad"></h3>
+        <div class="footer">© 2024 Blox Fruits</div>
+    </div>
+
+    <script>
+        const frutas = [
+            "Fruta Cohete",
+            "Fruta Gira",
+            "Fruta Corte",
+            "Fruta Resorte",
+            "Fruta Bomba",
+            "Fruta Humo",
+            "Fruta Espina",
+            "Fruta Fuego",
+            "Fruta Halcón",
+            "Fruta Hielo",
+            "Fruta Arena",
+            "Fruta Oscura",  // Dark
+            "Fruta Fantasma",
+            "Fruta Diamante",
+            "Fruta Luz",
+            "Fruta Goma",
+            "Fruta Barrera",
+            "Fruta Magma",
+            "Fruta Temblor",
+            "Fruta Buda",
+            "Fruta Amor",
+            "Fruta Sonido",
+            "Fruta Araña",
+            "Fruta Fénix",
+            "Fruta Portal",
+            "Fruta Trueno",
+            "Fruta Dolor",
+            "Fruta Ventisca",
+            "Fruta Gravedad",
+            "Fruta Masa",
+            "Fruta Sombra",  // Shadow
+            "Fruta Veneno",
+            "Fruta Control",
+            "Fruta Espíritu",
+            "Fruta Mamut",
+            "Fruta T-Rex",
+            "Fruta Dragón",
+            "Fruta Leopardo",
+            "Fruta Kitsune"
+        ];
+
+        function obtenerFruta() {
+            const frutaAleatoria = frutas[Math.floor(Math.random() * frutas.length)];
+            const probabilidad = (100 / frutas.length).toFixed(2);
+            document.getElementById("resultado").innerText = `¡Has obtenido la ${frutaAleatoria}!`;
+            document.getElementById("probabilidad").innerText = `Probabilidad de obtener esta fruta: ${probabilidad}%`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
